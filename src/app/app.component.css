@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.currency-list {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}

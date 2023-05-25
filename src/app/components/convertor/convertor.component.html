@@ -1,0 +1,30 @@
+<div class="convertor-wrapper">
+    <div class="convertor-controls">
+        <mat-form-field class="convertor-field">
+            <mat-label>Value</mat-label>
+            <input matInput placeholder="Value" [(ngModel)]="fromValue" (ngModelChange)="convert()" type="number">
+        </mat-form-field>
+        <mat-form-field class="convertor-field">
+            <mat-label>Currency</mat-label>
+            <mat-select [(ngModel)]="fromCurrency" (ngModelChange)="convert()">
+                <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+                    {{currency.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="convertor-controls">
+        <mat-form-field class="convertor-field">
+            <mat-label>Value</mat-label>
+            <input matInput placeholder="Value" [(ngModel)]="toValue" (ngModelChange)="convertBack()" type="number">
+        </mat-form-field>
+        <mat-form-field class="convertor-field">
+            <mat-label>Currency</mat-label>
+            <mat-select [(ngModel)]="toCurrency" (ngModelChange)="convertOnToSelect()">
+                <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+                    {{currency.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
